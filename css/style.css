@@ -181,6 +181,7 @@ body{
     display: flex;
     flex-direction: column;
     row-gap: 15px;
+    overflow-y: auto;
 }
 .message{
     max-width: 45%;
