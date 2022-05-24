@@ -9,6 +9,13 @@
 }
 
 /*-----------
+    Typo
+------------*/
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+/*-----------
     Body
 ------------*/
 body{
@@ -26,12 +33,19 @@ body{
     width: 100%;
     height: 80px;
     background-color: #eaeaea;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.col-dx .user-header{
-    border-left: 1px solid #d6d6d6;
+/* User avatar */
+.user-picture{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
 }
-
 
 /*------------------
    Main Container
@@ -52,6 +66,25 @@ body{
     background-color: #fff;
 }
 
+/* User Header */
+.user-picture img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.user-header-left{
+    display: flex;
+    align-items: center;
+}
+.user-name{
+    padding-left: 10px;
+}
+.user-header-right i{
+    margin: 10px;
+    font-size: 20px;
+    color: #b1b1b1;
+}
+
 /* User notifications */
 .user-notifications{
     width: 100%;
@@ -59,7 +92,28 @@ body{
     background-color: #8edafc;
 }
 
-
+/* User search input */
+.search-input{
+    display: flex;
+    padding: 10px;
+    background-color: #fafafa;
+}
+.search-input input{
+    width: 80%;
+    padding: 5px 10px;
+    margin: auto;
+}
+.search-input input, .search-lens{
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid #f5f5f5;
+}
+.search-lens{
+    width: 20%;
+    border-right: none;
+    color: #b6b9bb;
+    font-size: 18px;
+}
 
 /*-------------------
    Col-dx | Messages 
@@ -68,6 +122,6 @@ body{
     width: 70%;
     height: 100%;
     background-image: url("../img/mine.jpg");
+    border-left: 1px solid #d6d6d6;
 }
-
 

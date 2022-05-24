@@ -4,6 +4,12 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- CSS -->
         <link rel="stylesheet" href="css/style.css">
         <title>Document</title>
@@ -11,17 +17,42 @@
     <body>
         <!-- Container principale applicazione -->
         <div id="root" class="main-container" >
+
             <!-- colonna di sinistra con contatti -->
             <div class="col-sx">
                 <!-- Header contatto Utente -->
                 <div class="user-header">
-
+                    <div class="user-header-left">
+                        <div class="user-picture">
+                            <img src="img/avatar_me.jpg" alt="User picture">
+                        </div>
+                        <span class="user-name"><h4>Marco T.</h4></span>
+                    </div>
+                    <div class="user-header-right">
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
                 </div>
                 <!-- Notifiche nuovi messaggi -->
                 <div class="user-notifications">
-
+                    
+                </div>
+                <!-- Cerca o inizia nuova chat -->
+                <div class="search-input">
+                    <button class="search-lens"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input type="tel" name="" id="" placeholder="Cerca o inizia una nuova chat">
+                </div>
+                <!-- Contact List -->
+                <div class="contact-list">
+                    <ul>
+                        <li class="contact">
+                            
+                        </li>
+                    </ul>
                 </div>
             </div>
+
             <!-- colonna di destra con messaggi -->
             <div class="col-dx">
                 <!-- Header messaggi Utente -->
@@ -29,6 +60,7 @@
 
                 </div>
             </div>
+
         </div>
         <!-- JS - MAIN -->
         <script src="js/main.js"></script>
