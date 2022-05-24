@@ -38,7 +38,13 @@
                 </div>
                 <!-- Notifiche nuovi messaggi -->
                 <div class="user-notifications">
-                    
+                    <div class="bell-box">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <div class="notifications">
+                        <h4>Ricevi notifiche di nuovi messaggi</h4>
+                        <small>Attiva notifiche desktop</small>
+                    </div>
                 </div>
                 <!-- Cerca o inizia nuova chat -->
                 <div class="search-input">
@@ -51,7 +57,7 @@
                         <!-- Struttura contatto  -->
                         <li class="contact" v-for="(contact,index) in contacts">
                             <div class="user-picture">
-                                <img src="img/avatar[index].avatar.jpg" alt="">
+                                <img :src=" `img/avatar${contact.avatar}.jpg`">
                             </div>
                             <div class="contact-info">
                                 <span class="user-name"><h4>{{ contact.name }}</h4></span>
