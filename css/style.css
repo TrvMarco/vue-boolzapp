@@ -162,6 +162,9 @@ body{
     flex-grow: 1;
 }
 
+.contact:hover{
+    background-color: #F4F5F5;
+}
 
 /*-------------------
    Col-dx | Messages 
