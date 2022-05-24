@@ -64,6 +64,7 @@ body{
     width: 90%;
     margin: auto;
     display: flex;
+    overflow-y: hidden;
 }
 
 /*-------------------
