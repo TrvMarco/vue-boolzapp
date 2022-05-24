@@ -173,11 +173,40 @@ body{
     border-left: 1px solid #d6d6d6;
 }
 
+/* Chat Area */
 .chat-container{
     width: 100%;
     height: calc(100% - 160px);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+.message{
+    max-width: 45%;
+    min-width: 35%;
+    min-height: 55px;
+    padding: 5px;
+    padding-left: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sent{
+    align-self: flex-end;
+    background-color: #d5f9ba;
+} 
+.received{
+    background-color: #fff;
+    align-self: flex-start;
+}
+.message-time{
+    align-self: flex-end;
+    font-size: 14px;
 }
 
+/* Footer chat */
 .emoticons, .microphone{
     width: 10%;
     text-align: center;
