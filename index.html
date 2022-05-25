@@ -98,7 +98,7 @@
                     <!-- MESSAGE -->
                     <div v-for="(message,index) in contacts[currentIndex].messages" class="message" :class="{sent: message.status == 'sent', received: message.status == 'received'}">
                         <span>{{ message.message }}</span>
-                        <span class="message-time text-color-gray"><small>15:50</small></span>
+                        <div class="message-time text-color-gray"><small>15:50</small></div>
                     </div>
                 </div>
                 <!-- Input text message -->

@@ -195,7 +195,7 @@ body{
 }
 .message{
     max-width: 45%;
-    min-width: 25%;
+    min-width: 15%;
     min-height: 55px;
     padding: 5px;
     padding-left: 10px;
