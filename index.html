@@ -55,7 +55,7 @@
                 <div class="contact-list">
                     <ul>
                         <!-- Struttura contatto  -->
-                        <li class="contact" v-for="(contact,index) in contacts">
+                        <li @click="currentIndex = index" class="contact" v-for="(contact,index) in contacts">
                             <div class="user-picture">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                             </div>
@@ -94,30 +94,8 @@
                 <!-- Chat -->
                 <div class="chat-container">
                     <!-- MESSAGE -->
-                    <div class="message sent">
-                        <span>Hai portato a spasso il cane?</span>
-                        <span class="message-time text-color-gray"><small>15:50</small></span>
-                    </div> 
-
-                    <div class="message sent">
-                        <span>Ricordati di stendere i panni</span>
-                        <span class="message-time text-color-gray"><small>15:50</small></span>
-                    </div>
-                    <div class="message received">
-                        <span>Ricordati di stendere i panni</span>
-                        <span class="message-time text-color-gray"><small>15:50</small></span>
-                    </div>
-                    <div class="message sent">
-                        <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt maxime assumenda explicabo delectus repellendus culpa sunt aperiam vero animi, architecto dolore saepe totam fugit laboriosam cum quibusdam, autem veritatis ullam?</span>
-                        <span class="message-time text-color-gray"><small>15:50</small></span>
-                    </div> 
-                    
-                    <div class="message sent">
-                        <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed vero deserunt repellat saepe neque odit error eius voluptatum aliquid officiis, ipsum tenetur maxime nemo reiciendis laboriosam iure cum voluptates a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis laudantium delectus, inventore unde ex harum quasi sapiente quisquam nemo impedit magnam sint quam maxime totam officiis placeat</span>
-                        <span class="message-time text-color-gray"><small>15:50</small></span>
-                    </div>
-                    <div class="message received">
-                        <span>Ricordati di stendere i panni</span>
+                    <div v-for="(message,index) in contacts[currentIndex].messages" class="message" :class="{sent: message.status == 'sent', received: message.status == 'received'}">
+                        <span>{{ message.message }}</span>
                         <span class="message-time text-color-gray"><small>15:50</small></span>
                     </div>
                 </div>
