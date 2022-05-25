@@ -204,6 +204,7 @@ body{
     align-items: center;
     justify-content: space-between;
     flex-shrink: 0;
+    word-break: break-word;
 }
 .sent{
     align-self: flex-end;

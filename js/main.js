@@ -176,7 +176,7 @@ const app = new Vue ({
     },
     methods:{
         sendMessage(){
-            this.contacts[0].messages.push(this.newMessage)
+            this.contacts[this.currentIndex].messages.push(this.newMessage)
             this.newMessage = {
                 date: '10/01/2020 15:30:55',
                 message: '',
