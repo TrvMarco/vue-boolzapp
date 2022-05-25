@@ -10,6 +10,11 @@ const app = new Vue ({
             message: '',
             status: 'sent'
         },
+        autoMessage:{
+            date: '10/01/2020 15:30:55',
+            message: 'ok',
+            status: 'received'
+        },
         contacts: [
             {
                 name: 'Michele',
@@ -172,7 +177,8 @@ const app = new Vue ({
                     }
                 ],
             },
-        ]
+        ],
+        reply: false,
     },
     methods:{
         sendMessage(){
@@ -182,7 +188,14 @@ const app = new Vue ({
                 message: '',
                 status: 'sent'
             }
-            console.log(this.contacts[0].messages)
+            this.reply = true
+            setTimeout(this.autoReply,2000)
+        },
+        autoReply(){
+            console.log("funziona")
+            if(this.reply == true){
+                this.contacts[this.currentIndex].messages.push(this.autoMessage)
+            }
         }
     }
 })
