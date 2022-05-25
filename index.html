@@ -78,7 +78,7 @@
                 <div class="user-header">
                     <div class="user-header-left">
                         <div class="user-picture">
-                            <img src="img/avatar_1.jpg"  alt="User picture">
+                            <img :src="`img/avatar${contacts[currentIndex].avatar}.jpg`"  alt="User picture">
                         </div>
                         <div class="contact-info">
                             <span class="user-name"><h4> {{ contacts[currentIndex].name }} </h4></span>
