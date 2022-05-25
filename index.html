@@ -57,7 +57,7 @@
                         <!-- Struttura contatto  -->
                         <li class="contact" v-for="(contact,index) in contacts">
                             <div class="user-picture">
-                                <img :src=" `img/avatar${contact.avatar}.jpg`">
+                                <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                             </div>
                             <div class="contact-info">
                                 <span class="user-name"><h4>{{ contact.name }}</h4></span>
@@ -81,7 +81,7 @@
                             <img src="img/avatar_1.jpg"  alt="User picture">
                         </div>
                         <div class="contact-info">
-                            <span class="user-name"><h4>Michele</h4></span>
+                            <span class="user-name"><h4> {{ contacts[currentIndex].name }} </h4></span>
                             <small class="message-info text-color-gray">Ultimo accesso oggi alle 12:00</small>
                         </div>    
                     </div>
