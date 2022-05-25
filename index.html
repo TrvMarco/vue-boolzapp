@@ -48,8 +48,10 @@
                 </div>
                 <!-- Cerca o inizia nuova chat -->
                 <div class="search-input">
-                    <button class="search-lens"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <input type="tel" name="" id="" placeholder="Cerca o inizia una nuova chat">
+                    <form>
+                        <button class="search-lens"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <input type="tel" name="" id="" placeholder="Cerca o inizia una nuova chat">
+                    </form>
                 </div>
                 <!-- Contact List -->
                 <div class="contact-list">
@@ -105,7 +107,9 @@
                         <i class="fa-regular fa-face-smile"></i>
                     </div>  
                     <div class="input-message">
-                        <input type="text" name="" id="sendmessage" placeholder="Scrivi un messaggio">
+                        <form @submit.prevent="sendMessage()">
+                            <input type="text"id="sendmessage" placeholder="Scrivi un messaggio" v-model="newMessage.message">
+                        </form>
                     </div>
                     <div class="microphone">
                         <i class="fa-solid fa-microphone"></i>

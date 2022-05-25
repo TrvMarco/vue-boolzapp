@@ -5,6 +5,11 @@ const app = new Vue ({
     el: "#root",
     data:{
         currentIndex: 0,
+        newMessage:{
+            date: '10/01/2020 15:30:55',
+            message: '',
+            status: 'sent'
+        },
         contacts: [
             {
                 name: 'Michele',
@@ -166,10 +171,18 @@ const app = new Vue ({
                         status: 'received'
                     }
                 ],
-            }
+            },
         ]
     },
     methods:{
-        
+        sendMessage(){
+            this.contacts[0].messages.push(this.newMessage)
+            this.newMessage = {
+                date: '10/01/2020 15:30:55',
+                message: '',
+                status: 'sent'
+            }
+            console.log(this.contacts[0].messages)
+        }
     }
 })
