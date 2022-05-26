@@ -49,13 +49,13 @@
                 <!-- Cerca o inizia nuova chat -->
                 <div class="search-input">
                     <button class="search-lens"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <input type="tel" name="" id="" placeholder="Cerca o inizia una nuova chat" v-model="userSearch">
+                    <input @keyup="searchContact()" type="tel" name="" id="" placeholder="Cerca o inizia una nuova chat" v-model="userSearch">
                 </div>
                 <!-- Contact List -->
                 <div class="contact-list">
                     <ul>
                         <!-- Struttura contatto  -->
-                        <li @click="currentIndex = index" class="contact" v-for="(contact,index) in contacts" v-if="searchContact(contact)">
+                        <li @click="currentIndex = index" class="contact" v-for="(contact,index) in contacts" v-if="contact.visible">
                             <div class="user-picture">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                             </div>

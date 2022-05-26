@@ -189,19 +189,16 @@ const app = new Vue ({
                 message: '',
                 status: 'sent'
             }
-            setTimeout(this.autoReply,2000)
+            setTimeout(this.autoReply,2000);
         },
         autoReply(){
             this.contacts[this.currentIndex].messages.push(this.autoMessage)
         },
-        searchContact(contact){   
-            console.log(contact)
-            console.log(contact.visible) 
-            if(this.userSearch == contact.name){
-                return contact.visible = true;
-            }else if(this.userSearch == ''){
-                return contact.visible = true;
-            }
+        searchContact(){   
+            console.log(this.userSearch)
+            this.contacts.forEach((contact)=>{
+                contact.visible = contact.name.toLowerCase().includes(this.userSearch.toLowerCase()) 
+            })
         }   
     }
 })
