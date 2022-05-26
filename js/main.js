@@ -5,6 +5,7 @@ const app = new Vue ({
     el: "#root",
     data:{
         currentIndex: 0,
+        userSearch: '',
         newMessage:{
             date: '10/01/2020 15:30:55',
             message: '',
@@ -12,7 +13,7 @@ const app = new Vue ({
         },
         autoMessage:{
             date: '10/01/2020 15:30:55',
-            message: 'ok',
+            message: 'Ok 😊',
             status: 'received'
         },
         contacts: [
@@ -192,6 +193,15 @@ const app = new Vue ({
         },
         autoReply(){
             this.contacts[this.currentIndex].messages.push(this.autoMessage)
-        }
+        },
+        searchContact(contact){   
+            console.log(contact)
+            console.log(contact.visible) 
+            if(this.userSearch == contact.name){
+                return contact.visible = true;
+            }else if(this.userSearch == ''){
+                return contact.visible = true;
+            }
+        }   
     }
 })

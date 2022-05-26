@@ -117,7 +117,7 @@ body{
 
 
 /* User search input */
-.search-input form{
+.search-input{
     display: flex;
     padding: 10px;
     background-color: #fafafa;

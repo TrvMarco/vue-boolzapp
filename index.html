@@ -14,7 +14,7 @@
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <!-- CSS -->
         <link rel="stylesheet" href="css/style.css">
-        <title>Document</title>
+        <title>BoolZap</title>
     </head>
     <body>
         <!-- Container principale applicazione -->
@@ -48,16 +48,14 @@
                 </div>
                 <!-- Cerca o inizia nuova chat -->
                 <div class="search-input">
-                    <form>
-                        <button class="search-lens"><i class="fa-solid fa-magnifying-glass"></i></button>
-                        <input type="tel" name="" id="" placeholder="Cerca o inizia una nuova chat">
-                    </form>
+                    <button class="search-lens"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input type="tel" name="" id="" placeholder="Cerca o inizia una nuova chat" v-model="userSearch">
                 </div>
                 <!-- Contact List -->
                 <div class="contact-list">
                     <ul>
                         <!-- Struttura contatto  -->
-                        <li @click="currentIndex = index" class="contact" v-for="(contact,index) in contacts">
+                        <li @click="currentIndex = index" class="contact" v-for="(contact,index) in contacts" v-if="searchContact(contact)">
                             <div class="user-picture">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                             </div>
@@ -92,11 +90,11 @@
                         <i class="fa-solid fa-paperclip"></i>
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
-                </div>
+                </div> 
                 <!-- Chat -->
                 <div class="chat-container">
                     <!-- MESSAGE -->
-                    <div v-for="(message,index) in contacts[currentIndex].messages" class="message" :class="{sent: message.status == 'sent', received: message.status == 'received'}">
+                    <div v-for="(message,index) in contacts[currentIndex].messages" class="message" :class="message.status">
                         <span>{{ message.message }}</span>
                         <div class="message-time text-color-gray"><small>15:50</small></div>
                     </div>
@@ -116,7 +114,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
         <!-- JS - MAIN -->
         <script src="js/main.js"></script>
