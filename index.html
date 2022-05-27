@@ -61,7 +61,7 @@
                             </div>
                             <div class="contact-info">
                                 <span class="user-name"><h4>{{ contact.name }}</h4></span>
-                                <small class="message-info text-color-gray">Ultimo messaggio inviato</small>
+                                <small class="message-info text-color-gray">{{ contact.messages[contact.messages.length - 1].message}}</small>
                             </div>
                             <div class="time">
                                 <span class="message-time text-color-gray"><small>12:00</small></span>
@@ -106,7 +106,7 @@
                     </div>  
                     <div class="input-message">
                         <form @submit.prevent="sendMessage()">
-                            <input type="text"id="sendmessage" placeholder="Scrivi un messaggio" v-model="newMessage.message">
+                            <input type="text"id="sendmessage" placeholder="Scrivi un messaggio" v-model="newMessage.message" required>
                         </form>
                     </div>
                     <div class="microphone">

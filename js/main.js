@@ -179,7 +179,6 @@ const app = new Vue ({
                 ],
             },
         ],
-        reply: false,
     },
     methods:{
         sendMessage(){
@@ -189,7 +188,7 @@ const app = new Vue ({
                 message: '',
                 status: 'sent'
             }
-            setTimeout(this.autoReply,2000);
+            setTimeout(this.autoReply, 2000 );
         },
         autoReply(){
             this.contacts[this.currentIndex].messages.push(this.autoMessage)
